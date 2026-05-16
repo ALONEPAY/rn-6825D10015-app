@@ -6,7 +6,7 @@ export default function Index() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    // จำลองการโหลด 2.5 วินาที แล้วเข้าหน้าหลัก
+    // หน้ารีโหลด
     const timer = setTimeout(() => setReady(true), 2500);
     return () => clearTimeout(timer);
   }, []);
@@ -27,7 +27,7 @@ export default function Index() {
 
       {/* Profile Section */}
       <View style={styles.profileWrap}>
-        {/* ใส่รูปนักศึกษาจริงได้โดยเปลี่ยน uri ด้านล่าง */}
+        {/* ใส่รูปฮุฮิ */}
         <Image
           source={require("../../assets/images/me.jpg")}
           style={styles.avatar}

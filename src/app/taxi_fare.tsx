@@ -12,7 +12,7 @@ import {
 function calcFare(km: number, trafficMin: number): number {
   if (km <= 0) return 0;
 
-  let fare = 35; // อัตราเริ่มต้น กม.แรก
+  let fare = 35;
   let remaining = km - 1;
 
   const tiers: { limit: number; rate: number }[] = [
@@ -31,7 +31,6 @@ function calcFare(km: number, trafficMin: number): number {
     remaining -= used;
   }
 
-  // รถติด: 3 บาท/นาที
   fare += trafficMin * 3;
 
   return fare;
@@ -82,21 +81,16 @@ export default function TaxiFare() {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {/* Header */}
       <View style={styles.header}>
         <Text style={styles.headerText}>Taxi Fare</Text>
       </View>
-
-      {/* Taxi Icon */}
       <View style={styles.iconContainer}>
         <Text style={styles.taxiEmoji}>🚕</Text>
       </View>
 
-      {/* Card */}
       <View style={styles.card}>
         <Text style={styles.titleTh}>คำนวณค่าโดยสารแท็กซี่</Text>
 
-        {/* Distance Input */}
         <View style={styles.fieldWrap}>
           <Text style={styles.label}>ระยะทาง (กิโลเมตร) 🗺️</Text>
           <TextInput
@@ -109,7 +103,6 @@ export default function TaxiFare() {
           {distError ? <Text style={styles.errorMsg}>{distError}</Text> : null}
         </View>
 
-        {/* Traffic Input */}
         <View style={styles.fieldWrap}>
           <Text style={styles.label}>เวลารถติด (นาที) ⏰</Text>
           <TextInput
@@ -122,7 +115,6 @@ export default function TaxiFare() {
           {trafficError ? <Text style={styles.errorMsg}>{trafficError}</Text> : null}
         </View>
 
-        {/* Buttons */}
         <TouchableOpacity style={styles.btnCalc} onPress={handleCalculate}>
           <Text style={styles.btnText}>คำนวณค่าโดยสาร</Text>
         </TouchableOpacity>
@@ -131,7 +123,6 @@ export default function TaxiFare() {
           <Text style={styles.btnText}>ยกเลิก</Text>
         </TouchableOpacity>
 
-        {/* Result Box */}
         <View style={styles.resultBox}>
           <Text style={styles.resultLabel}>ค่าโดยสารแท็กซี่</Text>
           <Text style={styles.resultAmount}>
