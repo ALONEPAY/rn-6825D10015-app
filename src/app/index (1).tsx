@@ -33,7 +33,7 @@ export default function Index() {
           style={styles.avatar}
         />
         <Text style={styles.profileName}>ระพีพัฒน์ เทียมผล</Text>
-        <Text style={styles.profileId}>6852D015</Text>
+        <Text style={styles.profileId}>6852D10015</Text>
       </View>
     </View>
   );
